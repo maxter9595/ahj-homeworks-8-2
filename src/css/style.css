@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f4;
+  overflow: hidden; /* Hide default scrollbar */
+}
+
+/* Headings */
+h2 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 100;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+  padding: 10px 0;
+}
+
+/* Containers */
+.container {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 50px 25px;
+  border: 1px solid #000;
+  overflow: hidden; /* Hide default scrollbar */
+}
+
+/* Instances List */
+#instances-list {
+  margin-top: 28px;
+  max-height: 535px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#instances-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Instance Items */
+.instance {
+  margin-bottom: 16px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  padding-bottom: 0px;
+}
+
+.instance div {
+  margin-bottom: 13px;
+}
+
+.instance div:nth-child(1) {
+  margin-bottom: 16.5px;
+}
+
+.instance div:nth-child(2) {
+  margin-bottom: 10.5px;
+}
+
+.instance div:nth-child(3) {
+  margin-top: -10.5px;
+}
+
+/* Status Indicators */
+.status {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  margin-left: 17px;
+}
+
+.status.running {
+  background-color: green;
+}
+
+.status.stopped {
+  background-color: black;
+}
+
+.status.running,
+.status.stopped {
+  margin-right: 10px;
+  margin-bottom: -3px;
+}
+
+/* Worklog Section */
+.worklog {
+  max-height: 530px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.start-button,
+.stop-button,
+.delete-button {
+  color: black;
+  font-size: 25.5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+.start-button,
+.stop-button {
+  margin-left: 3px;
+}
+
+.delete-button {
+  margin-left: -15px;
+  padding-top: -15px;
+}
+
+#create-instance {
+  margin: 0px;
+  margin-top: -5px;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Log Entries */
+.log-entry {
+  margin-bottom: 27px;
+}
+
+.log-time {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.log-server {
+  margin-bottom: 5px;
+}
+
+.worklog-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .container {
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #instances-list {
+    max-height: 300px;
+  }
+
+  .worklog {
+    max-height: 300px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+
+  .start-button,
+  .stop-button,
+  .delete-button {
+    font-size: 22px;
+  }
+
+  #create-instance {
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  .start-button,
+  .stop-button,
+  .delete-button {
+    font-size: 20px;
+  }
+
+  #create-instance {
+    height: 30px;
+  }
+
+  .instance {
+    padding: 10px;
+  }
+
+  .log-entry {
+    margin-bottom: 20px;
+  }
+}
